@@ -15,7 +15,12 @@ RimWorld Reminder Mod
 - Schedule a reminder to be fired next time the savefile is loaded.
 - 100% compatible with all other mods
   - No XML patches, no Harmony.
-  
+
+## Links
+
+- Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2105399990
+- GitHub https://github.com/MadaraUchiha/Forgetful
+
 ## Contributing 
 
 PRs and issues welcome!
