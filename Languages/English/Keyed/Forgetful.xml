@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Forgetful.Absolute>Absolute</Forgetful.Absolute>
+    <Forgetful.Relative>Relative</Forgetful.Relative>
+
+    <Forgetful.Of>of</Forgetful.Of>
+    <Forgetful.At>at</Forgetful.At>
+
+    <Forgetful.Title>Reminder: {0}</Forgetful.Title>
+    <Forgetful.Body>This is your reminder, scheduled for {0}\n\n{1}\n------\n\n{2}</Forgetful.Body>
+
+    <Forgetful.Main.New>Schedule New Reminder</Forgetful.Main.New>
+    <Forgetful.Main.NoReminders>There are no pending reminders scheduled</Forgetful.Main.NoReminders>
+
+    <Forgetful.ConfirmDelete.Title>Delete reminder?</Forgetful.ConfirmDelete.Title>
+    <Forgetful.ConfirmDelete.Body>Are you sure you want to delete this reminder?\nThis action cannot be undone.</Forgetful.ConfirmDelete.Body>
+
+    <Forgetful.Reminder.Never>Never</Forgetful.Reminder.Never>
+    <Forgetful.Reminder.NextLoad>Next Load</Forgetful.Reminder.NextLoad>
+
+    <Forgetful.Reminder.ThreatBig>Big threat</Forgetful.Reminder.ThreatBig>
+    <Forgetful.Reminder.ThreatSmall>Small threat</Forgetful.Reminder.ThreatSmall>
+    <Forgetful.Reminder.Negative>Negative</Forgetful.Reminder.Negative>
+    <Forgetful.Reminder.Neutral>Neutral</Forgetful.Reminder.Neutral>
+    <Forgetful.Reminder.Positive>Positive</Forgetful.Reminder.Positive>
+
+    <Forgetful.EditReminder.Title>Create/Edit Reminder</Forgetful.EditReminder.Title>
+    <Forgetful.EditReminder.Urgency>Urgency:</Forgetful.EditReminder.Urgency>
+    <Forgetful.EditReminder.SelectUrgency>Select...</Forgetful.EditReminder.SelectUrgency>
+    <Forgetful.EditReminder.ReminderTitle>Title:</Forgetful.EditReminder.ReminderTitle>
+    <Forgetful.EditReminder.ReminderBody>Body:</Forgetful.EditReminder.ReminderBody>
+    <Forgetful.EditReminder.ReminderTime>Time:</Forgetful.EditReminder.ReminderTime>
+    <Forgetful.EditReminder.FireOn>Fire on:</Forgetful.EditReminder.FireOn>
+    <Forgetful.EditReminder.FireIn>Fire in:</Forgetful.EditReminder.FireIn>
+    <Forgetful.EditReminder.DaysAnd>days and</Forgetful.EditReminder.DaysAnd>
+    <Forgetful.EditReminder.Hours>hours</Forgetful.EditReminder.Hours>
+    <Forgetful.EditReminder.Discard>Discard</Forgetful.EditReminder.Discard>
+    <Forgetful.EditReminder.Save>Save</Forgetful.EditReminder.Save>
+    <Forgetful.EditReminder.ErrorPast>Cannot schedule a reminder in the past</Forgetful.EditReminder.ErrorPast>
+    <Forgetful.EditReminder.ErorrEmptyTitle>Title may not be empty</Forgetful.EditReminder.ErorrEmptyTitle>
+</LanguageData>
