@@ -19,7 +19,7 @@ RimWorld Reminder Mod
 ## Links
 
 - Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2105399990
-- GitHub https://github.com/MadaraUchiha/Forgetful
+- GitHub https://github.com/MadaraUchiha/Reminders
 
 ## Contributing 
 
