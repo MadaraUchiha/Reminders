@@ -98,7 +98,7 @@ namespace Forgetful
 
             var offset = GenDate.TimeZoneAt(coords.x);
 
-            hourValue = GenDate.HourOfDay(absTicks, coords.x) - offset;
+            hourValue = GenDate.HourOfDay(absTicks, coords.x);
             hourBuffer = hourValue.ToString();
 
             Log.Debug($"Set defaults to {dayBuffer} {quadrumValue}, {yearBuffer} at {hourBuffer}.");
@@ -335,7 +335,9 @@ namespace Forgetful
             hourRect.width = 30f;
             Widgets.TextFieldNumeric(hourRect, ref hourValue, ref hourBuffer, 0, 23);
 
-            int dateToTicks = DateHelper.DateToGameTicksOffsetAgnostic(yearValue, quadrumValue, dayValue, hourValue);
+            var offsetHours = RemindersGameComponent.VectorForTime.HasValue ? GenDate.TimeZoneAt(RemindersGameComponent.VectorForTime.Value.x) : 0;
+
+            int dateToTicks = DateHelper.DateToGameTicksOffsetAgnostic(yearValue, quadrumValue, dayValue, hourValue, offsetHours);
             fireOnTick = dateToTicks;
         }
 

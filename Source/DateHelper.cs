@@ -5,7 +5,7 @@ namespace Forgetful
 {
     public static class DateHelper
     {
-        public static int DateToGameTicksOffsetAgnostic(int year, Quadrum quadrum, int day, int hour)
+        public static int DateToGameTicksOffsetAgnostic(int year, Quadrum quadrum, int day, int hour, int offsetHours)
         {
             var yearDiff = year - GenDate.DefaultStartingYear;
             var yearTicks = yearDiff * GenDate.TicksPerYear;
@@ -17,7 +17,9 @@ namespace Forgetful
 
             var hourTicks = hour * GenDate.TicksPerHour;
 
-            return GenDate.TickAbsToGame(yearTicks + quadrumTicks + dayTicks + hourTicks);
+            var offsetTicks = offsetHours * GenDate.TicksPerHour;
+
+            return GenDate.TickAbsToGame(yearTicks + quadrumTicks + dayTicks + hourTicks - offsetTicks);
         }
 
         public static int RelativeTimeToGameTicks(int days, int hours)
