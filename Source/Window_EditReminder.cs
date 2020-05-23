@@ -384,7 +384,7 @@ namespace Forgetful
             discardRect.width = buttonWidth;
 
             var _color = GUI.color;
-            GUI.color = Color.red;
+            GUI.color = new Color(1f, .5f, .5f);
             if (Widgets.ButtonText(discardRect, I18n.Translate("EditReminder.Discard")))
             {
                 Close();
@@ -393,7 +393,7 @@ namespace Forgetful
             var saveRect = discardRect;
             saveRect.x = discardRect.xMax + margin;
 
-            GUI.color = Color.green;
+            GUI.color = new Color(.5f, 1f, .5f);
             if (Widgets.ButtonText(saveRect, I18n.Translate("EditReminder.Save")))
             {
                 SaveAndClose();
