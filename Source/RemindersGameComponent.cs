@@ -4,7 +4,7 @@ using UnityEngine;
 using RimWorld.Planet;
 using System.Collections.Generic;
 
-namespace Forgetful
+namespace Reminders
 {
     public class RemindersGameComponent : GameComponent
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace Forgetful
+namespace Reminders
 {
     class MainTabWindow_Reminders : MainTabWindow
     {

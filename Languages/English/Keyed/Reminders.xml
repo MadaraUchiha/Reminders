@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Reminders.Absolute>Absolute</Reminders.Absolute>
+    <Reminders.Relative>Relative</Reminders.Relative>
+
+    <Reminders.Of>of</Reminders.Of>
+    <Reminders.At>at</Reminders.At>
+
+    <Reminders.Title>Reminder: {0}</Reminders.Title>
+    <Reminders.Body>This is your reminder, scheduled for {0}\n\n{1}\n------\n\n{2}</Reminders.Body>
+
+    <Reminders.Main.New>Schedule New Reminder</Reminders.Main.New>
+    <Reminders.Main.NoReminders>There are no pending reminders scheduled</Reminders.Main.NoReminders>
+
+    <Reminders.ConfirmDelete.Title>Delete reminder?</Reminders.ConfirmDelete.Title>
+    <Reminders.ConfirmDelete.Body>Are you sure you want to delete this reminder?\nThis action cannot be undone.</Reminders.ConfirmDelete.Body>
+
+    <Reminders.Reminder.Never>Never</Reminders.Reminder.Never>
+    <Reminders.Reminder.NextLoad>Next Load</Reminders.Reminder.NextLoad>
+
+    <Reminders.Reminder.ThreatBig>Big threat</Reminders.Reminder.ThreatBig>
+    <Reminders.Reminder.ThreatSmall>Small threat</Reminders.Reminder.ThreatSmall>
+    <Reminders.Reminder.Negative>Negative</Reminders.Reminder.Negative>
+    <Reminders.Reminder.Neutral>Neutral</Reminders.Reminder.Neutral>
+    <Reminders.Reminder.Positive>Positive</Reminders.Reminder.Positive>
+
+    <Reminders.EditReminder.Title>Create/Edit Reminder</Reminders.EditReminder.Title>
+    <Reminders.EditReminder.Urgency>Urgency:</Reminders.EditReminder.Urgency>
+    <Reminders.EditReminder.SelectUrgency>Select...</Reminders.EditReminder.SelectUrgency>
+    <Reminders.EditReminder.ReminderTitle>Title:</Reminders.EditReminder.ReminderTitle>
+    <Reminders.EditReminder.ReminderBody>Body:</Reminders.EditReminder.ReminderBody>
+    <Reminders.EditReminder.ReminderTime>Time:</Reminders.EditReminder.ReminderTime>
+    <Reminders.EditReminder.FireOn>Fire on:</Reminders.EditReminder.FireOn>
+    <Reminders.EditReminder.FireIn>Fire in:</Reminders.EditReminder.FireIn>
+    <Reminders.EditReminder.DaysAnd>days and</Reminders.EditReminder.DaysAnd>
+    <Reminders.EditReminder.Hours>hours</Reminders.EditReminder.Hours>
+    <Reminders.EditReminder.Discard>Discard</Reminders.EditReminder.Discard>
+    <Reminders.EditReminder.Save>Save</Reminders.EditReminder.Save>
+    <Reminders.EditReminder.ErrorPast>Cannot schedule a reminder in the past</Reminders.EditReminder.ErrorPast>
+    <Reminders.EditReminder.ErorrEmptyTitle>Title may not be empty</Reminders.EditReminder.ErorrEmptyTitle>
+</LanguageData>

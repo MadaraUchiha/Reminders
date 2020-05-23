@@ -4,11 +4,11 @@
         <defName>Reminders</defName>
         <label>reminders</label>
         <description>Schedule, edit and delete reminders.</description>
-        <tabWindowClass>Forgetful.MainTabWindow_Reminders</tabWindowClass>
+        <tabWindowClass>Reminders.MainTabWindow_Reminders</tabWindowClass>
         <!-- Between History and Faction tabs -->
         <order>85</order>
         <validWithoutMap>true</validWithoutMap>
         <minimized>True</minimized>
-        <iconPath>UI/Buttons/MainButtons/Forgetful</iconPath>
+        <iconPath>UI/Buttons/MainButtons/Reminders</iconPath>
     </MainButtonDef>
 </Defs>

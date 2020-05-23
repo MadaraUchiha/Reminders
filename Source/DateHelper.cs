@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace Forgetful
+namespace Reminders
 {
     public static class DateHelper
     {

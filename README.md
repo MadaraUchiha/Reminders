@@ -1,4 +1,4 @@
-# Forgetful
+# Reminders
 RimWorld Reminder Mod
 
 <img alt=Preview src="/About/Preview.png" width=500 />

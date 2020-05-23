@@ -1,6 +1,6 @@
 using Verse;
 
-namespace Forgetful
+namespace Reminders
 {
     public static class I18n
     {
@@ -11,7 +11,7 @@ namespace Forgetful
 
         private static string Key( string key )
         {
-            return $"Forgetful.{key}";
+            return $"Reminders.{key}";
         }
     }
 }

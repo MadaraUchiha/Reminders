@@ -1,4 +1,4 @@
-﻿namespace Forgetful
+﻿namespace Reminders
 {
 	static class Log
 	{
@@ -10,7 +10,7 @@
 
 		public static void Message(string msg )
 		{
-			Verse.Log.Message( $"Forgetful :: {msg}");
+			Verse.Log.Message( $"Reminders :: {msg}");
 		}
 	}
 }

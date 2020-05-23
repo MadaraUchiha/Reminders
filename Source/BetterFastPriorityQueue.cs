@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace Forgetful
+namespace Reminders
 {
     public class BetterFastPriorityQueue<T>: FastPriorityQueue<T>, IExposable, IEnumerable<T> where T : IExposable
     {

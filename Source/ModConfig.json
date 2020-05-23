@@ -1,12 +1,12 @@
 {
-  "name": "Forgetful",
+  "name": "Reminders",
   "version": {
     "major": 0,
     "minor": 0,
     "build": 0
   },
   "git_user": "Madara Uchiha",
-  "git_repo": "Forgetful",
+  "git_repo": "Reminders",
   "visibility": 0,
-  "packageId": "madara uchiha.forgetful"
+  "packageId": "MadaraUchiha.Reminders"
 }

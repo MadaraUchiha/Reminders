@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using Verse;
 
-namespace Forgetful
+namespace Reminders
 {
     public class Reminder: IExposable, IComparable
     {

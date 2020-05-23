@@ -3,7 +3,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace Forgetful
+namespace Reminders
 {
     public static partial class FWidgets
     {
