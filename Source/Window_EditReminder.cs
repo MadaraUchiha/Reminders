@@ -171,10 +171,16 @@ namespace Reminders
             timeRect.y = bodyRect.yMax + 15;
             DoTime(timeRect);
 
-            var recurRect = timeRect;
-            recurRect.y = timeRect.yMax + 15;
-            recurRect.height = 30;
-            DoRecurring(recurRect);
+            if (selectedTimeRep != TimeRepresentation.NextLoad)
+            {
+                var recurRect = timeRect;
+                recurRect.y = timeRect.yMax + 15;
+                recurRect.height = 30;
+                DoRecurring(recurRect);
+            } else
+            {
+                recur = false;
+            }
 
             var buttonsRect = inRect;
             buttonsRect.yMin = inRect.yMax - 50;
