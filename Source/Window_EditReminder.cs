@@ -44,6 +44,14 @@ namespace Reminders
         private int hoursFromNowValue = 8;
         private string hoursFromNowBuffer;
 
+        private bool recur;
+        private int recurEveryDays = 0;
+        private string recurEveryDaysBuffer;
+        private int recurEveryHours = 8;
+        private string recurEveryHoursBuffer;
+
+        private const int DefaultPeriod = 8 * GenDate.TicksPerHour;
+
         public Window_EditReminder()
         {
             doCloseButton = false;
@@ -66,6 +74,15 @@ namespace Reminders
             {
                 selectedTimeRep = TimeRepresentation.NextLoad;
             }
+            if (reminder.RecurEvery.HasValue)
+            {
+                recur = true;
+                var days = Mathf.FloorToInt((float)reminder.RecurEvery.Value / (float)GenDate.TicksPerDay);
+                var ticksRemainder = reminder.RecurEvery.Value - days * GenDate.TicksPerDay;
+                var hours = Mathf.CeilToInt((float)ticksRemainder / (float)GenDate.TicksPerHour);
+                recurEveryDays = days;
+                recurEveryHours = hours;
+            }
         }
 
         public override void PreOpen()
@@ -74,7 +91,7 @@ namespace Reminders
 
             if (fireOnTick == 0 || nextLoad)
             {
-                fireOnTick = Find.TickManager.TicksGame + 8 * GenDate.TicksPerHour;
+                fireOnTick = Find.TickManager.TicksGame + DefaultPeriod;
             }
 
             
@@ -95,8 +112,6 @@ namespace Reminders
 
             dayValue = GenDate.DayOfQuadrum(absTicks, coords.x) + 1;
             dayBuffer = dayValue.ToString();
-
-            var offset = GenDate.TimeZoneAt(coords.x);
 
             hourValue = GenDate.HourOfDay(absTicks, coords.x);
             hourBuffer = hourValue.ToString();
@@ -131,7 +146,7 @@ namespace Reminders
             Log.Debug($"Set to {hoursFromNowValue} ({hoursFromNowBuffer}) on day {daysFromNowValue} ({daysFromNowBuffer})");
         }
 
-        public override Vector2 InitialSize => new Vector2(500f, 500f);
+        public override Vector2 InitialSize => new Vector2(500f, 600f);
 
         public override void DoWindowContents(Rect inRect)
         {
@@ -155,6 +170,11 @@ namespace Reminders
             var timeRect = bodyRect;
             timeRect.y = bodyRect.yMax + 15;
             DoTime(timeRect);
+
+            var recurRect = timeRect;
+            recurRect.y = timeRect.yMax + 15;
+            recurRect.height = 30;
+            DoRecurring(recurRect);
 
             var buttonsRect = inRect;
             buttonsRect.yMin = inRect.yMax - 50;
@@ -375,6 +395,39 @@ namespace Reminders
             fireOnTick = DateHelper.RelativeTimeToGameTicks(daysFromNowValue, hoursFromNowValue);
         }
 
+        private void DoRecurring(Rect rect)
+        {
+
+            Widgets.CheckboxLabeled(rect, I18n.Translate("EditReminder.Recur"), ref recur);
+            if (recur)
+            {
+                var timeInputRect = rect;
+                timeInputRect.y = rect.yMax + 5;
+                timeInputRect.height = 30;
+                FWidgets.Label(timeInputRect, I18n.Translate("EditReminder.RecurEvery"), anchor: TextAnchor.MiddleLeft);
+
+                var dayRect = timeInputRect;
+                dayRect.x += 120f;
+                dayRect.width = 60f;
+                Widgets.TextFieldNumeric(dayRect, ref recurEveryDays, ref recurEveryDaysBuffer);
+
+                var dayLabelRect = dayRect;
+                dayLabelRect.x = dayRect.xMax + 4f;
+                FWidgets.Label(dayLabelRect, I18n.Translate("EditReminder.DaysAnd"), anchor: TextAnchor.MiddleCenter);
+
+                var hourRect = dayLabelRect;
+                hourRect.x = dayLabelRect.xMax + 4f;
+                hourRect.width = 30f;
+                Widgets.TextFieldNumeric(hourRect, ref recurEveryHours, ref recurEveryHoursBuffer, 0, 23);
+
+                var hourLabelRect = hourRect;
+                hourLabelRect.x = hourRect.xMax + 4f;
+                hourLabelRect.width = 60f;
+                FWidgets.Label(hourLabelRect, I18n.Translate("EditReminder.Hours"), anchor: TextAnchor.MiddleLeft);
+            }
+
+        }
+
         private void DoButtons(Rect rect)
         {
             var margin = 10;
@@ -423,12 +476,15 @@ namespace Reminders
                 comp.RemindersOnNextLoad.Remove(reminder);
             }
 
+            var recurDuration = recurEveryDays * GenDate.TicksPerDay + recurEveryHours * GenDate.TicksPerHour;
+
             var newReminder = new Reminder()
             {
                 Title = title,
                 Body = body,
                 FireOnTick = nextLoad ? -1 : fireOnTick,
                 LetterDef = selectedLetterDef,
+                RecurEvery = recur ? (int?) recurDuration : null
             };
 
             if (nextLoad)

@@ -7,7 +7,8 @@
     <Reminders.At>at</Reminders.At>
 
     <Reminders.Title>Reminder: {0}</Reminders.Title>
-    <Reminders.Body>This is your reminder, scheduled for {0}\n\n{1}\n------\n\n{2}</Reminders.Body>
+    <Reminders.Body>This is your reminder, scheduled for {0}\n\n{1}\n------\n\n{2}{3}</Reminders.Body>
+    <Reminders.RecursIn>\n\nThis is a recurring reminder. Fires again in {0}, on {1}.</Reminders.RecursIn>
 
     <Reminders.Main.New>Schedule New Reminder</Reminders.Main.New>
     <Reminders.Main.NoReminders>There are no pending reminders scheduled</Reminders.Main.NoReminders>
@@ -34,6 +35,8 @@
     <Reminders.EditReminder.FireIn>Fire in:</Reminders.EditReminder.FireIn>
     <Reminders.EditReminder.DaysAnd>days and</Reminders.EditReminder.DaysAnd>
     <Reminders.EditReminder.Hours>hours</Reminders.EditReminder.Hours>
+    <Reminders.EditReminder.Recur>Recurring?</Reminders.EditReminder.Recur>
+    <Reminders.EditReminder.RecurEvery>Fire again every</Reminders.EditReminder.RecurEvery>
     <Reminders.EditReminder.Discard>Discard</Reminders.EditReminder.Discard>
     <Reminders.EditReminder.Save>Save</Reminders.EditReminder.Save>
     <Reminders.EditReminder.ErrorPast>Cannot schedule a reminder in the past</Reminders.EditReminder.ErrorPast>

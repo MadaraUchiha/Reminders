@@ -61,6 +61,10 @@ namespace Reminders
             {
                 var reminder = ReminderQueue.Pop();
                 SendLetter(reminder);
+                if (reminder.RecurEvery.HasValue)
+                {
+                    ReminderQueue.Push(Reminder.Recur(reminder));
+                }
                 if (ReminderQueue.Count == 0) { break; }
             }
 
@@ -92,9 +96,13 @@ namespace Reminders
         private void SendLetter(Reminder reminder, bool isNextLoad = false)
         {
             var scheduledFor = isNextLoad ? I18n.Translate("Reminder.NextLoad") : DateString(reminder.FireOnTick);
+            var recurLine = !reminder.RecurEvery.HasValue
+                ? null
+                : I18n.Translate("RecursIn", reminder.RecurEveryPeriod, DateString(reminder.RecurEvery.Value + reminder.FireOnTick));
+
             Game.letterStack.ReceiveLetter(
                 I18n.Translate("Title", reminder.Title),
-                I18n.Translate("Body", scheduledFor, reminder.Title, reminder.Body),
+                I18n.Translate("Body", scheduledFor, reminder.Title, reminder.Body, recurLine),
                 reminder.LetterDef
             );
         }

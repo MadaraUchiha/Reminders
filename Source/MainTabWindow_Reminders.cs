@@ -11,6 +11,7 @@ namespace Reminders
     {
 
         private static readonly Texture2D DeleteX = ContentFinder<Texture2D>.Get("UI/Buttons/Delete");
+        private static readonly Texture2D RecurArrow = ContentFinder<Texture2D>.Get("UI/Recur");
 
         private readonly RemindersGameComponent Comp = Current.Game.GetComponent<RemindersGameComponent>();
 
@@ -111,6 +112,10 @@ namespace Reminders
                 var iconColor = reminder.LetterDef.color;
                 GUI.color = iconColor;
                 Widgets.DrawTextureFitted(iconRect, icon, .8f);
+                if (reminder.RecurEvery.HasValue)
+                {
+                    Widgets.DrawTextureFitted(iconRect, RecurArrow, .5f);
+                }
             }
 
             var fromNowRect = rect;

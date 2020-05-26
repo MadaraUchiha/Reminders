@@ -12,6 +12,8 @@ namespace Reminders
         public string Body = "";
         public int FireOnTick = int.MaxValue;
 
+        public int? RecurEvery;
+
         public string FromNow
         {
             get
@@ -19,10 +21,24 @@ namespace Reminders
                 if (FireOnTick == int.MaxValue) { return I18n.Translate("Reminder.Never"); }
                 if (FireOnTick == -1) { return I18n.Translate("Reminder.NextLoad"); }
 
-                var difference = GenDate.TickGameToAbs(FireOnTick) - Find.TickManager.TicksAbs;
+                var difference = FireOnTick - Find.TickManager.TicksGame;
 
                 return difference.ToStringTicksToPeriod();
             }
+        }
+
+        public string RecurEveryPeriod => RecurEvery?.ToStringTicksToPeriod();
+
+        public static Reminder Recur(Reminder old)
+        {
+            return new Reminder()
+            {
+                Title = old.Title,
+                Body = old.Body,
+                LetterDef = old.LetterDef,
+                RecurEvery = old.RecurEvery,
+                FireOnTick = old.FireOnTick + (old.RecurEvery ?? 0)
+            };
         }
 
 
@@ -42,6 +58,7 @@ namespace Reminders
             Scribe_Values.Look(ref Title, nameof(Title));
             Scribe_Values.Look(ref Body, nameof(Body));
             Scribe_Values.Look(ref FireOnTick, nameof(FireOnTick));
+            Scribe_Values.Look(ref RecurEvery, nameof(RecurEvery));
         }
     }
 }
