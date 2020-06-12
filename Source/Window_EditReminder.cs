@@ -94,7 +94,7 @@ namespace Reminders
                 fireOnTick = Find.TickManager.TicksGame + DefaultPeriod;
             }
 
-            
+
             UpdateAbsoluteFieldsFromTicks(fireOnTick);
             UpdateRelativeFieldsFromTicks(fireOnTick);
         }
@@ -177,7 +177,8 @@ namespace Reminders
                 recurRect.y = timeRect.yMax + 15;
                 recurRect.height = 30;
                 DoRecurring(recurRect);
-            } else
+            }
+            else
             {
                 recur = false;
             }
@@ -463,15 +464,8 @@ namespace Reminders
 
         private void SaveAndClose()
         {
-            if (title.NullOrEmpty())
+            if (!Validate())
             {
-                Messages.Message(I18n.Translate("EditReminder.ErorrEmptyTitle"), MessageTypeDefOf.RejectInput);
-                return;
-            }
-
-            if (fireOnTick < Find.TickManager.TicksGame)
-            {
-                Messages.Message(I18n.Translate("EditReminder.ErrorPast"), MessageTypeDefOf.RejectInput);
                 return;
             }
 
@@ -490,7 +484,7 @@ namespace Reminders
                 Body = body,
                 FireOnTick = nextLoad ? -1 : fireOnTick,
                 LetterDef = selectedLetterDef,
-                RecurEvery = recur ? (int?) recurDuration : null
+                RecurEvery = recur ? (int?)recurDuration : null
             };
 
             if (nextLoad)
@@ -503,6 +497,28 @@ namespace Reminders
             }
 
             Close();
+        }
+
+        private bool Validate()
+        {
+            if (title.NullOrEmpty())
+            {
+                Messages.Message(I18n.Translate("EditReminder.ErorrEmptyTitle"), MessageTypeDefOf.RejectInput);
+                return false;
+            }
+
+            if (fireOnTick < Find.TickManager.TicksGame)
+            {
+                Messages.Message(I18n.Translate("EditReminder.ErrorPast"), MessageTypeDefOf.RejectInput);
+                return false;
+            }
+            var recurDuration = recurEveryDays * GenDate.TicksPerDay + recurEveryHours * GenDate.TicksPerHour;
+            if (recur && recurDuration == 0)
+            {
+                Messages.Message(I18n.Translate("EditReminder.ErrorInvalidRecur"), MessageTypeDefOf.RejectInput);
+                return false;
+            }
+            return true;
         }
 
         private enum TimeRepresentation

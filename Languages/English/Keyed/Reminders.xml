@@ -41,4 +41,5 @@
     <Reminders.EditReminder.Save>Save</Reminders.EditReminder.Save>
     <Reminders.EditReminder.ErrorPast>Cannot schedule a reminder in the past</Reminders.EditReminder.ErrorPast>
     <Reminders.EditReminder.ErorrEmptyTitle>Title may not be empty</Reminders.EditReminder.ErorrEmptyTitle>
+    <Reminders.EditReminder.ErrorInvalidRecur>Recurring time is invalid (minimum is every one hour)</Reminders.EditReminder.ErrorInvalidRecur>
 </LanguageData>
