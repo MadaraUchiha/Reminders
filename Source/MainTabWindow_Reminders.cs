@@ -7,6 +7,7 @@ using Verse;
 
 namespace Reminders
 {
+    [StaticConstructorOnStartup]
     class MainTabWindow_Reminders : MainTabWindow
     {
 
