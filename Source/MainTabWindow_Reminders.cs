@@ -22,8 +22,6 @@ namespace Reminders
 
         public override void DoWindowContents(Rect inRect)
         {
-            base.DoWindowContents(inRect);
-
             var buttonRect = inRect;
             buttonRect.width = 300f;
             buttonRect.height = 30f;
