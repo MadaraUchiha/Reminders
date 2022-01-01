@@ -11,6 +11,7 @@ namespace Reminders
         private const int DelayToSendOnLoadLetters = 10;
         public BetterFastPriorityQueue<Reminder> ReminderQueue = new BetterFastPriorityQueue<Reminder>();
         public List<Reminder> RemindersOnNextLoad = new List<Reminder>();
+
         public Game Game { get; private set; }
 
         private int ticksOnLoad = 0;
