@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Reminders.Absolute>Точное</Reminders.Absolute>
+    <Reminders.Relative>Относительное</Reminders.Relative>
+
+    <Reminders.Of> </Reminders.Of>
+    <Reminders.At>в</Reminders.At>
+
+    <Reminders.Title>Напоминание: {0}</Reminders.Title>
+    <Reminders.Body>Напоминание на {0}\n\n{1}\n------\n\n{2}{3}</Reminders.Body>
+    <Reminders.RecursIn>\n\nСледующий раз через {0}.\n{1}</Reminders.RecursIn>
+
+    <Reminders.Main.New>Создать напоминание</Reminders.Main.New>
+    <Reminders.Main.NoReminders>Нет напоминаний</Reminders.Main.NoReminders>
+
+    <Reminders.ConfirmDelete.Title>Удалить напоминание?</Reminders.ConfirmDelete.Title>
+    <Reminders.ConfirmDelete.Body>Вы уверены, что хотите удалить напоминание?\nДействие необратимо.</Reminders.ConfirmDelete.Body>
+
+    <Reminders.Reminder.Never>Никогда</Reminders.Reminder.Never>
+    <Reminders.Reminder.NextLoad>Загрузка</Reminders.Reminder.NextLoad>
+
+    <Reminders.Reminder.ThreatBig>Серьезная угроза</Reminders.Reminder.ThreatBig>
+    <Reminders.Reminder.ThreatSmall>Угроза</Reminders.Reminder.ThreatSmall>
+    <Reminders.Reminder.Negative>Негативное</Reminders.Reminder.Negative>
+    <Reminders.Reminder.Neutral>Нейтральное</Reminders.Reminder.Neutral>
+    <Reminders.Reminder.Positive>Позитивное</Reminders.Reminder.Positive>
+
+    <Reminders.EditReminder.Title>Редактор напоминания</Reminders.EditReminder.Title>
+    <Reminders.EditReminder.Urgency>Тип:</Reminders.EditReminder.Urgency>
+    <Reminders.EditReminder.SelectUrgency>Выберите...</Reminders.EditReminder.SelectUrgency>
+    <Reminders.EditReminder.ReminderTitle>Заголовок:</Reminders.EditReminder.ReminderTitle>
+    <Reminders.EditReminder.ReminderBody>Описание:</Reminders.EditReminder.ReminderBody>
+    <Reminders.EditReminder.ReminderTime>Дата и время:</Reminders.EditReminder.ReminderTime>
+    <Reminders.EditReminder.FireOn>Дата:</Reminders.EditReminder.FireOn>
+    <Reminders.EditReminder.FireIn>Через:</Reminders.EditReminder.FireIn>
+    <Reminders.EditReminder.DaysAnd>дней и</Reminders.EditReminder.DaysAnd>
+    <Reminders.EditReminder.Hours>часов</Reminders.EditReminder.Hours>
+    <Reminders.EditReminder.Recur>Повторять?</Reminders.EditReminder.Recur>
+    <Reminders.EditReminder.RecurEvery>Через каждые:</Reminders.EditReminder.RecurEvery>
+    <Reminders.EditReminder.Discard>Отменить</Reminders.EditReminder.Discard>
+    <Reminders.EditReminder.Save>Сохранить</Reminders.EditReminder.Save>
+    <Reminders.EditReminder.ErrorPast>Неверная дата</Reminders.EditReminder.ErrorPast>
+    <Reminders.EditReminder.ErorrEmptyTitle>Введите заголовок</Reminders.EditReminder.ErorrEmptyTitle>
+    <Reminders.EditReminder.ErrorInvalidRecur>Повторять можно не чаще, чем раз в час</Reminders.EditReminder.ErrorInvalidRecur>
+</LanguageData>
