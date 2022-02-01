@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <MainButtonDef>
+        <defName>Напоминания</defName>
+        <label>напоминания</label>
+        <description>Создавайте, редактируйте и удаляйте напоминания.</description>
+        <tabWindowClass>Reminders.MainTabWindow_Reminders</tabWindowClass>
+        <!-- Between History and Faction tabs -->
+        <order>85</order>
+        <validWithoutMap>true</validWithoutMap>
+        <minimized>True</minimized>
+        <iconPath>UI/Buttons/MainButtons/Reminders</iconPath>
+    </MainButtonDef>
+</Defs>
