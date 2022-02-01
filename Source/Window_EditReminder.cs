@@ -336,7 +336,7 @@ namespace Reminders
             var quadrumRect = ofRect;
             quadrumRect.x = ofRect.xMax + 4f;
             quadrumRect.width = 100f;
-            var pressed = Widgets.ButtonText(quadrumRect, quadrumValue.ToString());
+            var pressed = Widgets.ButtonText(quadrumRect, quadrumValue.Label());
             if (pressed)
             {
                 Find.WindowStack.Add(new FloatMenu(MakeQuadrumOptions()));
@@ -372,7 +372,7 @@ namespace Reminders
         {
             return Enum.GetValues(typeof(Quadrum)).Cast<Quadrum>()
                 .Where(q => q != Quadrum.Undefined)
-                .Select(q => new FloatMenuOption(q.ToString(), () => quadrumValue = q))
+                .Select(q => new FloatMenuOption(q.Label(), () => quadrumValue = q))
                 .ToList();
         }
 
