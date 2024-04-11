@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using LudeonTK;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -262,7 +263,7 @@ namespace Reminders
             inputRect.height = 60;
 
 
-            body = Widgets.TextAreaScrollable(inputRect, body, ref bodyTextAreaScrollPosition);
+            body = DevGUI.TextAreaScrollable(inputRect, body, ref bodyTextAreaScrollPosition);
         }
 
         private void DoTime(Rect rect)

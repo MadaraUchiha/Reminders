@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
   <Excluded>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\.git</exclude>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\.vs</exclude>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\Assemblies\0Harmony.dll</exclude>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\Assemblies\Reminders.pdb</exclude>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\MigrationBackup</exclude>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\Reminders.sln</exclude>
-    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Forgetful\Source</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\.git</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\.vs</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\Assemblies\0Harmony.dll</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\Assemblies\Reminders.pdb</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\MigrationBackup</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\Reminders.sln</exclude>
+    <exclude>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Reminders\Source</exclude>
   </Excluded>
 </Configuration>
