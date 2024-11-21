@@ -13,6 +13,7 @@ RimWorld Reminder Mod
   - Uses native RimWorld letters.
   - Respectes "pause on threat" settings.
 - Schedule a reminder to be fired next time the savefile is loaded.
+- Reminders can recur on every load or every N days/hours.
 - 100% compatible with all other mods
   - No XML patches, no Harmony.
 

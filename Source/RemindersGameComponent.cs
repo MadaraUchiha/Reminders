@@ -61,10 +61,10 @@ namespace Reminders
             while (ReminderQueue.Peek().FireOnTick <= GenTicks.TicksGame)
             {
                 var reminder = ReminderQueue.Pop();
-                SendLetter(reminder);
-                if (reminder.RecurEvery.HasValue)
+                var recurringReminder = SendLetter(reminder);
+                if (recurringReminder != null)
                 {
-                    ReminderQueue.Push(Reminder.Recur(reminder));
+                    ReminderQueue.Push(recurringReminder);
                 }
                 if (ReminderQueue.Count == 0) { break; }
             }
@@ -81,9 +81,19 @@ namespace Reminders
         {
             Log.Debug($"Sending {RemindersOnNextLoad.Count} letters on load");
 
-            RemindersOnNextLoad.ForEach(r => SendLetter(r, true));
+            var NewRemindersOnNextLoad = new List<Reminder>();
 
-            RemindersOnNextLoad.Clear();
+            // RemindersOnNextLoad.Select(r => SendLetter(r, true));
+            foreach (var reminder in RemindersOnNextLoad)
+            {
+                var recurringReminder = SendLetter(reminder, true);
+                if (recurringReminder != null)
+                {
+                    NewRemindersOnNextLoad.Add(recurringReminder);
+                }
+            }
+
+            RemindersOnNextLoad = NewRemindersOnNextLoad;
         }
 
         public override void ExposeData()
@@ -94,7 +104,7 @@ namespace Reminders
             Scribe_Collections.Look(ref RemindersOnNextLoad, nameof(RemindersOnNextLoad));
         }
 
-        private void SendLetter(Reminder reminder, bool isNextLoad = false)
+        private Reminder SendLetter(Reminder reminder, bool isNextLoad = false)
         {
             var scheduledFor = isNextLoad ? I18n.Translate("Reminder.NextLoad") : DateString(reminder.FireOnTick);
             var recurLine = !reminder.RecurEvery.HasValue
@@ -106,6 +116,12 @@ namespace Reminders
                 I18n.Translate("Body", scheduledFor, reminder.Title, reminder.Body, recurLine),
                 reminder.LetterDef
             );
+
+            if (reminder.RecurEvery.HasValue)
+            {
+                return Reminder.Recur(reminder);
+            }
+            return null;
         }
 
         private static string DateString(int ticks)

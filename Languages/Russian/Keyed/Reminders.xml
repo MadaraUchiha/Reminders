@@ -37,6 +37,7 @@
     <Reminders.EditReminder.Hours>часов</Reminders.EditReminder.Hours>
     <Reminders.EditReminder.Recur>Повторять?</Reminders.EditReminder.Recur>
     <Reminders.EditReminder.RecurEvery>Через каждые:</Reminders.EditReminder.RecurEvery>
+    <Reminders.EditReminder.RecurOnNextLoad>Срабатывать при каждом запуске</Reminders.EditReminder.RecurOnNextLoad>
     <Reminders.EditReminder.Discard>Отменить</Reminders.EditReminder.Discard>
     <Reminders.EditReminder.Save>Сохранить</Reminders.EditReminder.Save>
     <Reminders.EditReminder.ErrorPast>Неверная дата</Reminders.EditReminder.ErrorPast>

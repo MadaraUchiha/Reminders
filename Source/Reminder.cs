@@ -14,6 +14,8 @@ namespace Reminders
 
         public int? RecurEvery;
 
+        public bool IsNextLoad { get => FireOnTick == -1; }
+
         public string FromNow
         {
             get

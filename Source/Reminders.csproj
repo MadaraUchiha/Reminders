@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4061-beta" />
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4243" />
   </ItemGroup>
 
 </Project>

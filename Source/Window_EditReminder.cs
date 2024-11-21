@@ -172,16 +172,16 @@ namespace Reminders
             timeRect.y = bodyRect.yMax + 15;
             DoTime(timeRect);
 
-            if (selectedTimeRep != TimeRepresentation.NextLoad)
-            {
                 var recurRect = timeRect;
                 recurRect.y = timeRect.yMax + 15;
                 recurRect.height = 30;
+            if (selectedTimeRep != TimeRepresentation.NextLoad)
+            {
                 DoRecurring(recurRect);
             }
             else
             {
-                recur = false;
+                DoNextLoadRecurring(recurRect);
             }
 
             var buttonsRect = inRect;
@@ -433,7 +433,17 @@ namespace Reminders
                 hourLabelRect.width = 60f;
                 FWidgets.Label(hourLabelRect, I18n.Translate("EditReminder.Hours"), anchor: TextAnchor.MiddleLeft);
             }
+        }
 
+        private void DoNextLoadRecurring(Rect rect)
+        {
+            Widgets.CheckboxLabeled(rect, I18n.Translate("EditReminder.Recur"), ref recur);
+            if (recur) {
+                var infoRect = rect;
+                infoRect.y = rect.yMax + 5;
+                infoRect.height = 30;
+                FWidgets.Label(infoRect, I18n.Translate("EditReminder.RecurOnNextLoad"), anchor: TextAnchor.MiddleLeft);
+            }
         }
 
         private void DoButtons(Rect rect)
@@ -477,7 +487,8 @@ namespace Reminders
                 comp.RemindersOnNextLoad.Remove(reminder);
             }
 
-            var recurDuration = recurEveryDays * GenDate.TicksPerDay + recurEveryHours * GenDate.TicksPerHour;
+            // 0 for next load means that the FireOnTick remains at -1 and is scheduled to the next tick.
+            var recurDuration = nextLoad ? 0 : recurEveryDays * GenDate.TicksPerDay + recurEveryHours * GenDate.TicksPerHour;
 
             var newReminder = new Reminder()
             {
@@ -514,7 +525,7 @@ namespace Reminders
                 return false;
             }
             var recurDuration = recurEveryDays * GenDate.TicksPerDay + recurEveryHours * GenDate.TicksPerHour;
-            if (recur && recurDuration == 0)
+            if (recur && !nextLoad && recurDuration == 0)
             {
                 Messages.Message(I18n.Translate("EditReminder.ErrorInvalidRecur"), MessageTypeDefOf.RejectInput);
                 return false;

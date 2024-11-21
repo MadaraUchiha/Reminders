@@ -37,6 +37,7 @@
     <Reminders.EditReminder.Hours>hours</Reminders.EditReminder.Hours>
     <Reminders.EditReminder.Recur>Recurring?</Reminders.EditReminder.Recur>
     <Reminders.EditReminder.RecurEvery>Fire again every</Reminders.EditReminder.RecurEvery>
+    <Reminders.EditReminder.RecurOnNextLoad>Fire again on every load</Reminders.EditReminder.RecurOnNextLoad>
     <Reminders.EditReminder.Discard>Discard</Reminders.EditReminder.Discard>
     <Reminders.EditReminder.Save>Save</Reminders.EditReminder.Save>
     <Reminders.EditReminder.ErrorPast>Cannot schedule a reminder in the past</Reminders.EditReminder.ErrorPast>
