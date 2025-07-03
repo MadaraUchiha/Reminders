@@ -229,7 +229,7 @@ namespace Reminders
                     new FloatMenuOption(
                         label: entry.Value,
                         action: () => selectedLetterDef = entry.Key,
-                        itemIcon: entry.Key.Icon,
+                        iconTex: entry.Key.Icon,
                         iconColor: entry.Key.color,
                         extraPartWidth: 29f
                     ))
@@ -262,8 +262,16 @@ namespace Reminders
             inputRect.y = labelRect.yMax;
             inputRect.height = 60;
 
+            body = TextAreaScrollable(inputRect, body, ref bodyTextAreaScrollPosition);
+        }
 
-            body = DevGUI.TextAreaScrollable(inputRect, body, ref bodyTextAreaScrollPosition);
+        private string TextAreaScrollable(Rect rect, string text, ref Vector2 scrollbarPosition, bool readOnly = false)
+        {
+            Rect rect2 = new Rect(0f, 0f, rect.width - 16f, Mathf.Max(Text.CalcHeight(text, rect.width) + 10f, rect.height));
+            Widgets.BeginScrollView(rect, ref scrollbarPosition, rect2, true);
+            string result = Widgets.TextArea(rect2, text, readOnly);
+            Widgets.EndScrollView();
+            return result;
         }
 
         private void DoTime(Rect rect)
