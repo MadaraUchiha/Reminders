@@ -20,11 +20,11 @@ namespace Reminders
         {
             get
             {
-                if (WorldRendererUtility.WorldRenderedNow)
+                if (WorldRendererUtility.WorldBackgroundNow)
                 {
-                    if (Find.WorldSelector.selectedTile >= 0)
+                    if (Find.WorldSelector.SelectedTile >= 0)
                     {
-                        return Find.WorldGrid.LongLatOf(Find.WorldSelector.selectedTile);
+                        return Find.WorldGrid.LongLatOf(Find.WorldSelector.SelectedTile);
                     }
                     if (Find.WorldSelector.NumSelectedObjects > 0)
                     {
