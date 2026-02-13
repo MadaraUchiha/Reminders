@@ -514,6 +514,7 @@ namespace Reminders
             else
             {
                 comp.ReminderQueue.Push(newReminder);
+                comp.ReminderQueue.Sort();
             }
 
             Close();

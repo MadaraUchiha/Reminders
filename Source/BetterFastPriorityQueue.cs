@@ -41,6 +41,11 @@ namespace Reminders
             Scribe_Collections.Look(ref innerList, "innerList", LookMode.Deep);
         }
 
+        public void Sort()
+        {
+            innerList.Sort(comparer);
+        }
+
         public IEnumerator<T> GetEnumerator() => innerList.Where(item => !deletedItems.Contains(item)).GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => innerList.Where(item => !deletedItems.Contains(item)).GetEnumerator();
     }
